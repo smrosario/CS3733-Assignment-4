@@ -417,4 +417,19 @@ public class ConverterTests {
     public void SpecialCharacter10() throws MalformedNumberException, ValueOutOfBoundsException {
         ElbonianArabicConverter converter = new ElbonianArabicConverter("IO");
     }
+
+    @Test (expected = MalformedNumberException.class)
+    public void SpecialCharacter11() throws MalformedNumberException, ValueOutOfBoundsException {
+        ElbonianArabicConverter converter = new ElbonianArabicConverter("      ");
+    }
+
+    @Test (expected = ValueOutOfBoundsException.class)
+    public void SpecialCharacter12() throws MalformedNumberException, ValueOutOfBoundsException {
+        ElbonianArabicConverter converter = new ElbonianArabicConverter("69420");
+    }
+
+    @Test (expected = MalformedNumberException.class)
+    public void SpecialCharacter13() throws MalformedNumberException, ValueOutOfBoundsException {
+        ElbonianArabicConverter converter = new ElbonianArabicConverter("asdfadsf");
+    }
 }
